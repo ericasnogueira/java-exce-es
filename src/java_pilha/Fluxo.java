@@ -15,6 +15,17 @@ public class Fluxo {
     System.out.println("Ini do metodo2");
     for (int i = 1; i <=5; i++){
         System.out.println(i);
+
+        // o codigo só irá executar caso de um ERRO  ARITHMETICEXCEPTION
+
+        //problema
+        try {
+            int a = i / 0;
+            //arithem... é o problema que aparecer no terminal quando for compilar
+            // ex é a variavel
+        } catch(ArithmeticException ex){
+            System.out.println("ArithmeticExpection");
+        }
     }
         System.out.println("fim do metodo2");
     }
