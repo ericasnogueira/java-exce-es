@@ -6,9 +6,20 @@ public class Fluxo {
         //posso colocar ele aqui tambem
         try {
             metodo1();
-        }  catch(ArithmeticException ex) {
-            System.out.println("ERRO : ArithmeticExpection");
-        }
+
+            //captura arit...       ou  Nullpointer ...
+        }  catch(ArithmeticException | NullPointerException ex) { // catch especifico
+            //chamando algum membro public da classe (sim tambem é uma classe/objeto)
+           String msg = ex.getMessage();
+           System.out.println("exception : " + msg);
+
+            //mostrando o rastro
+            ex.printStackTrace();
+      //  } catch (NullPointerException ex){
+           // String msg = ex.getMessage();
+     //       System.out.println("NullPointerException  " + msg);
+            //
+            }
         System.out.println("Fim do main");
     }
     private static void metodo1(){
@@ -35,6 +46,10 @@ public class Fluxo {
         //} catch(ArithmeticException ex){
          //   System.out.println("ArithmeticExpection");
        // }
+
+        // novo erro de  proposito para estudo
+      //  Conta c = null;
+      //  c.deposita(); // problematico pq não exite um objeto
     }
         System.out.println("fim do metodo2");
     }
